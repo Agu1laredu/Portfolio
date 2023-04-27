@@ -5,6 +5,9 @@
   margin: 0;
   padding: 0;
 }
+a {
+  color: white;
+}
 html {
   /* me permite deslizar cuando hago clic en los links del menu */
   scroll-behavior: smooth;
