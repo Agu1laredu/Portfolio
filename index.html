@@ -129,78 +129,6 @@
             </div>
           </div>
         </div>
-        <!-- <button type="dowload">
-          Descargar CV <i class="fa-solid fa-download"></i>
-          <span class="overlay"></span>
-        </button> -->
-      </div>
-    </section>
-
-    <!-- SECCION SKILLS -->
-    <section class="skills" id="skills">
-      <div class="contenido-seccion">
-        <h2>Skills</h2>
-        <div class="fila">
-          <!-- Technical Skill -->
-          <div class="col">
-            <h3>Technical Skills</h3>
-
-            <div class="skill">
-              <span>React.js</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>Next.js</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>HTML & CSS</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-
-            <div class="skill">
-              <span>Javascript</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-          </div>
-          <!-- Professional Skills -->
-          <div class="col">
-            <h3>Professional Skills</h3>
-            <div class="skill">
-              <span>Creatividad</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>Dedicación</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>Trabajo en Equipo</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-
-            <div class="skill">
-              <span>Comunicación</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -306,13 +234,13 @@
         <div class="galeria">
           <div class="proyecto">
             <a
-              href="https://github.com/Agu1laredu/ReactNative-Pokedex"
+              href="https://github.com/Agu1laredu/YoutubeClone-ReactNative"
               target="_blank"
             >
               <img src="img/p5.jpg" alt="" />
               <div class="overlay">
-                <h3>POKEDEX</h3>
-                <p>REACT NATIVE</p>
+                <h3>YOUTUBE CLONE</h3>
+                <p>Desarrollado en React Native</p>
               </div>
             </a>
           </div>
@@ -326,12 +254,15 @@
             </a>
           </div>
           <div class="proyecto">
-            <a href="https://github.com/Agu1laredu/WheaterAPP" target="_blank">
+            <a
+              href="https://github.com/Agu1laredu/WeatherApp-reborn"
+              target="_blank"
+            >
               <img src="img/p5.jpg" alt="" />
 
               <div class="overlay">
                 <h3>WHEATER APP</h3>
-                <p>REACT NATIVE</p>
+                <p>Desarrollado en React Native</p>
               </div>
             </a>
           </div>
@@ -339,18 +270,18 @@
             <a href="https://clonetwitterea.netlify.app/" target="_blank">
               <img src="img/p5.jpg" alt="" />
               <div class="overlay">
-                <h3>TWITTER CLONE</h3>
+                <h3>Twitter Clone</h3>
                 <p>Proyeto en React.js</p>
               </div>
             </a>
           </div>
 
           <div class="proyecto">
-            <a href="https://softwarenem.netlify.app/" target="_blank">
+            <a href="https://github.com/Agu1laredu/BurguerApp" target="_blank">
               <img src="img/p5.jpg" alt="" />
               <div class="overlay">
-                <h3>NEM SOFTWARE</h3>
-                <p>Desarollo web en React.js</p>
+                <h3>Burger App</h3>
+                <p>Desarrollado en React Native</p>
               </div>
             </a>
           </div>
@@ -375,21 +306,33 @@
         <div class="fila">
           <!-- Formulario -->
           <div class="col">
-            <input type="text" placeholder="Tú Nombre" />
-            <input type="text" placeholder="Número telefónico" />
-            <input type="text" placeholder="Dirección de correo" />
-            <input type="text" placeholder="Tema" />
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Mensaje"
-            ></textarea>
-            <button>
-              Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
-              <span class="overlay"></span>
-            </button>
+            <form id="formulario-contacto">
+              <input type="text" id="nombre" placeholder="Tú Nombre" required />
+              <input
+                type="tel"
+                id="telefono"
+                placeholder="Número telefónico"
+                required
+              />
+              <input
+                type="email"
+                id="correo"
+                placeholder="Dirección de correo"
+                required
+              />
+              <input type="text" id="tema" placeholder="Tema" required />
+              <textarea
+                id="mensaje"
+                cols="30"
+                rows="10"
+                placeholder="Mensaje"
+                required
+              ></textarea>
+              <button type="submit">
+                Enviar Mensaje<i class="fa-solid fa-paper-plane"></i
+                ><span class="overlay"></span>
+              </button>
+            </form>
           </div>
           <!-- Mapa -->
         </div>
@@ -419,5 +362,43 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      // Agregar evento de envío del formulario
+      document
+        .getElementById("formulario-contacto")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevenir el envío del formulario por defecto
+
+          // Obtener los valores de los campos de entrada
+          var nombre = document.getElementById("nombre").value;
+          var telefono = document.getElementById("telefono").value;
+          var correo = document.getElementById("correo").value;
+          var tema = document.getElementById("tema").value;
+          var mensaje = document.getElementById("mensaje").value;
+
+          // Crear el enlace de correo con los datos ingresados
+          var enlaceCorreo =
+            "mailto:Agu1laredu@hotmail.com" +
+            "?subject=" +
+            encodeURIComponent(tema) +
+            "&body=" +
+            encodeURIComponent(
+              "Nombre: " +
+                nombre +
+                "\n" +
+                "Teléfono: " +
+                telefono +
+                "\n" +
+                "Correo: " +
+                correo +
+                "\n" +
+                "Mensaje: " +
+                mensaje
+            );
+
+          // Abrir el cliente de correo con el enlace generado
+          window.location.href = enlaceCorreo;
+        });
+    </script>
   </body>
 </html>
